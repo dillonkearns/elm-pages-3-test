@@ -94,7 +94,7 @@ data routeParams =
             , cacheStrategy = Nothing
             , retries = Nothing
             , timeoutInMs = Nothing
-            , cachePath = Just "./http-cache"
+            , cachePath = Just "/tmp"
             }
             |> BackendTask.throw
             |> BackendTask.map
