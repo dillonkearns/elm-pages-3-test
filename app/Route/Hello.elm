@@ -91,10 +91,10 @@ data routeParams =
             { url = "https://api.github.com/repos/dillonkearns/elm-pages"
             , expect = BackendTask.Http.expectJson (Decode.field "stargazers_count" Decode.int)
             , headers = []
-            , cacheStrategy = Just BackendTask.Http.IgnoreCache
+            , cacheStrategy = Nothing
             , retries = Nothing
             , timeoutInMs = Nothing
-            , cachePath = Nothing
+            , cachePath = Just "./http-cache"
             }
             |> BackendTask.throw
             |> BackendTask.map
